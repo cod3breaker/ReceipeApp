@@ -9,4 +9,9 @@ class ChefTest < ActiveSupport::TestCase
     @chef.chefname = ""
     assert_not @chef.valid?
   end
+
+  test "chefname must not shorter than 3 characters" do
+    @chef.chefname = "aa"
+    assert_not @chef.valid?
+  end
 end

@@ -44,4 +44,9 @@ class RecipeTest < ActiveSupport::TestCase
    @recipe.description = ""
    assert_not @recipe.valid?
  end
+
+ test "description must have a minimum of 20 characters" do
+   @recipe.description = "a"*19
+   assert_not @recipe.valid?
+ end
 end

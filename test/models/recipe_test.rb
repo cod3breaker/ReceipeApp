@@ -14,4 +14,9 @@ class RecipeTest < ActiveSupport::TestCase
    @recipe.name = ""
    assert_not @recipe.valid?
  end
+
+ test "name is must have minimum 5 characters" do
+   @recipe.name = "aaaa"
+   assert_not @recipe.valid?
+ end
 end

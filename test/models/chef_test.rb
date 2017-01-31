@@ -14,4 +14,15 @@ class ChefTest < ActiveSupport::TestCase
     @chef.chefname = "aa"
     assert_not @chef.valid?
   end
+
+  test "chefname must not be longer than 40 characters" do
+    @chef.chefname = "a"*41
+    assert_not @chef.valid?
+  end
+
+  # Testcases for email field
+  test "email must be presence" do
+    @chef.email = ""
+    assert_not @chef.valid?
+  end
 end

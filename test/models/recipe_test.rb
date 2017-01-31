@@ -29,4 +29,9 @@ class RecipeTest < ActiveSupport::TestCase
    @recipe.summary = ""
    assert_not @recipe.valid?
  end
+
+ test "summary must be more than 10 characters" do
+   @recipe.summary = "a"*9
+   assert_not @recipe.valid?
+ end
 end

@@ -30,4 +30,11 @@ class ChefTest < ActiveSupport::TestCase
     @chef.email = "a" * 101 + "@example.com"
     assert_not @chef.valid?
   end
+
+  test "email must be unique" do
+    dup_chef = @chef.dup
+    dup_chef.email = @chef.email.upcase
+    @chef.save
+    assert_not dup_chef.valid?
+  end
 end

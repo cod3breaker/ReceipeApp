@@ -6,10 +6,6 @@ class RecipeTest < ActiveSupport::TestCase
                          description: "Add all the ingredients and cook with oil")
  end
 
- test "recipe should be valid" do
-   assert @recipe.valid?
- end
-
  test "name should be valid" do
    @recipe.name = ""
    assert_not @recipe.valid?

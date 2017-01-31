@@ -24,4 +24,9 @@ class RecipeTest < ActiveSupport::TestCase
    @recipe.name = "a"*101
    assert_not @recipe.valid?
  end
+
+ test "summary must be present before saving" do
+   @recipe.summary = ""
+   assert_not @recipe.valid?
+ end
 end

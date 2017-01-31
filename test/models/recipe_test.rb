@@ -19,4 +19,9 @@ class RecipeTest < ActiveSupport::TestCase
    @recipe.name = "aaaa"
    assert_not @recipe.valid?
  end
+
+ test "name must not exceed 100 characters" do
+   @recipe.name = "a"*101
+   assert_not @recipe.valid?
+ end
 end

@@ -25,4 +25,9 @@ class ChefTest < ActiveSupport::TestCase
     @chef.email = ""
     assert_not @chef.valid?
   end
+
+  test "email length must be within the limits" do
+    @chef.email = "a" * 101 + "@example.com"
+    assert_not @chef.valid?
+  end
 end

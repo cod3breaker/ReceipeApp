@@ -29,6 +29,10 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Followin 2 gems are for adding the uploading images feature.
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.8.0'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
